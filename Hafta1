@@ -1,0 +1,56 @@
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+
+def get_jpeg_files():
+    os.getcwd()
+    os.listdir()
+    path=os.getcwd()
+    path=os.getcwd()
+
+    Jpg_files=[f for f in os.listdir(path) if f.endswith("jpg")]
+    print(Jpg_files)
+def compare_list_ndarray():
+    list_1=[1,"hjbjh","3",'4',5,6]  #broadcast
+    list_2=[2,"gbgfvff","3",'1114',15,26]  #broadcast
+    print(list_1+list_2,)
+
+    list_3=[1,2,3,4]  #broadcast
+    list_4=[1,2,3,4]  #broadcast
+    print(list_3+list_4+[10])
+
+    list_5=np.asarray([1,2,3,4])
+    list_6=np.asarray([1,2,3,4])
+    print(list_5+list_6+10)
+
+image_1=plt.imread("resim.jpg")
+print(type(image_1),image_1.ndim)
+x,y,z=image_1.shape
+
+#for row in range (x):
+#    for col in range (y):
+#        temp_1=image_1[row,col]
+#        print(temp_1)   #Red  Blue  Green
+
+
+
+def display_two_image(im_1,im_2):
+    plt.subplot(1,2,1)
+    plt.imshow(im_1)
+    plt.subplot(1,2,2)
+    plt.imshow(im_2)
+    plt.show()
+
+
+def rotate(im_1):
+    new_image = np.zeros((1080, 1080, 3), dtype='uint8')
+    for row in range (x):
+        for col in range (y):
+            temp=im_1[row,col]
+            new_image[col,row]=temp
+    return new_image
+
+get_jpeg_files()
+compare_list_ndarray()
+image_3=rotate(image_1)
+display_two_image(image_1,image_3)
