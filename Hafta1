@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+
+image_1=plt.imread("resim.jpg")
+print("görüntü dizi boyutu: ",image_1.shape)
+
+
+#for row in range (1080):
+#    for col in range (1080):
+#        print(image_1[row,col,0],image_1[row,col,1],image_1[row,col,2])
+
+goruntu=Image.open("resim.jpg")
+cozunurluk=goruntu.info["jfif_density"]
+print("Çözünürlük: ",cozunurluk)
+plt.imshow(image_1)
+plt.show()
